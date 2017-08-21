@@ -4,7 +4,8 @@ module.exports = function(sequelize, Sequelize){
     photoUrl: Sequelize.STRING,
     nationality: Sequelize.STRING,
     instrument: Sequelize.STRING,
-    home_address: Sequelize.STRING
+    home_address: Sequelize.STRING,
+    //managerId: Sequelize.INTEGER
   }//,
   // {
   //   instanceMethods: {

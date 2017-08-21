@@ -3,7 +3,8 @@ module.exports = function(sequelize, Sequelize){
     title: Sequelize.STRING,
     duration: Sequelize.STRING,
     date_of_release: Sequelize.STRING,
-    album_title: Sequelize.STRING
+    album_title: Sequelize.STRING,
+    //artistId: Sequelize.INTEGER
   });
   return model;
 };
