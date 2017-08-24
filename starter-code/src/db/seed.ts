@@ -20,26 +20,26 @@ var lucySongs = [
 
 
 var managerCreate = function() {
-	return DB.Manager.create({
+  return DB.Manager.create({
     name: 'Ricky Bobby',
     email: 'rbobby@gmail.com',
     office_number: '516-877-0304',
     cell_phone_number: '718-989-1231'
 	})
   .then(function(manager) {
-    DB.Ad.create({
-      headline: 'Buy More Music!',
-      url: 'https://www.amazon.com/music-rock-classical-pop-jazz/b/ref=sd_allcat_dm_cds_vinyl?ie=UTF8&node=5174',
-      managerId: manager.id
-    })
-    .then(function(manager) {
+    // DB.Ad.create({
+    //   headline: 'Buy More Music!',
+    //   url: 'https://www.amazon.com/music-rock-classical-pop-jazz/b/ref=sd_allcat_dm_cds_vinyl?ie=UTF8&node=5174',
+    //   managerId: manager.id
+    // })
+    // .then(function(ad) {
       DB.Artist.create({
         name: 'Luciano Pavarotti',
         photoUrl: 'http://img.informador.com.mx/biblioteca/imagen/677x508/811/810055.jpg',
         nationality: 'Italiano',
         instrument: 'Voice',
         home_address: '1 Strada Roma',
-        managerId: manager.id
+        managerId: manager.id // ad.managerId
       })
       .then(function(artist) {
         //console.log(artist);
@@ -47,9 +47,9 @@ var managerCreate = function() {
           song.artistId = artist.id;
         });
         DB.Song.bulkCreate(lucySongs);
-      });
+      })
     });
-  }); 
+  // }); 
 };
 
 var songCreate = function() {
